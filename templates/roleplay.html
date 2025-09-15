@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style3.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<style>
+    body {
+      background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
+      color: #eee;
+    }
+
+    header h1 {
+      text-align: center;
+      margin: 2rem 0;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+
+    footer {
+      background-color: #222;
+      color: #bbb;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    .picture_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    margin: 0 100px 20px;
+}
+
+.picture_container a {
+    position: relative;
+    display: block;
+    width: 200px;     /* 固定宽度 */
+    height: auto;    /* 固定高度，保证比例一致 */
+    overflow: hidden; /* 超出部分裁掉 */
+    border-radius: 8px;
+}
+
+.picture_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 填满容器 */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.picture_container a::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0); /* 初始透明 */
+    transition: background 0.3s ease;
+}
+
+.picture_container a:hover img {
+    transform: scale(1.05); /* 放大一点 */
+}
+
+.picture_container a:hover::after {
+    background: rgba(0, 0, 0, 0.3); /* 半透明黑色遮罩 */
+}
+
+    
+</style>
+<body>
+    <!-- ✅ Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="{{ url_for('animepage') }}">Eminence</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('secondpage') }}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('producerpage') }}">Producer</a></li>
+          <li class="nav-item"><a class="nav-link active" href="{{ url_for('roleplay') }}">Character</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('animeplot') }}">Plot</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('productpage') }}">Product</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('commentpage') }}">Comment</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+        <header>
+            <h1>Character</h1>
+        </header>
+
+
+
+    <main>
+        <div class="picture_container">
+        <a href="https://the-eminence-in-shadow.fandom.com/wiki/Cid_Kagenou">
+        <img src="{{ url_for('static', filename='pic/shadow5.webp') }}" alt="shadow garden CID">
+        </a>
+        <a href="https://the-eminence-in-shadow.fandom.com/wiki/Delta">
+        <img src="{{ url_for('static', filename='pic/shadow6.webp') }}" alt="shadow garden DELTA">
+        </a>
+        <a href="https://the-eminence-in-shadow.fandom.com/wiki/Alpha">
+        <img src="{{ url_for('static', filename='pic/shadow7.webp') }}" alt="shadow garden ALPHA">
+        </a>
+        <a href="https://the-eminence-in-shadow.fandom.com/wiki/Gamma">
+        <img src="{{ url_for('static', filename='pic/shadow8.webp') }}" alt="shadow garden GAMMA">
+        </a>
+        <a href="https://the-eminence-in-shadow.fandom.com/wiki/Beta">
+        <img src="{{ url_for('static', filename='pic/shadow9.webp') }}" alt="shadow garden BETA">
+        </a>
+        <a href="https://the-eminence-in-shadow.fandom.com/wiki/Epsilon">
+        <img src="{{ url_for('static', filename='pic/shadow10.webp') }}" alt="shadow garden EPSILON">
+        </a>
+        <a href="https://the-eminence-in-shadow.fandom.com/wiki/Zeta">
+        <img src="{{ url_for('static', filename='pic/shadow11.webp') }}" alt="shadow garden ZETA">
+        </a>
+        <a href="https://the-eminence-in-shadow.fandom.com/wiki/Eta">
+        <img src="{{ url_for('static', filename='pic/shadow12.webp') }}" alt="shadow garden ETA">
+        </a>
+        <a href="https://the-eminence-in-shadow.fandom.com/wiki/Claire_Kagenou">
+        <img src="{{ url_for('static', filename='pic/shadow13.webp') }}" alt="CID sister">
+        </a>
+        <a https="https://the-eminence-in-shadow.fandom.com/wiki/Aurora">
+        <img src="{{ url_for('static', filename='pic/shadow14.webp') }}" alt="Aurora">
+        </a>
+        
+        </div>
+    </main>
+
+       
+
+
+   <footer>
+         <p>&copy; 2025 soobunping. All rights reserved.</p>
+    </footer>
+
+<script src="{{url_for('static', filename='js/script.js')}}"></script>
+</body>
+</html>
